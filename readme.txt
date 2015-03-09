@@ -28,9 +28,9 @@ EN| Possibility to give the link/script an ID you could use in javascript.
 EN| Possibility to control the ordering of links/scripts.
 
 FR| Facile d'utilisation.
-FR| Flexibilité pour déclarer une url relative/absolue.
-FR| Possibilité de donner au lien/script un ID que vous pourriez exploiter en javascript.
-FR| Possibilité de contrôler l'ordre des liens/scripts.
+FR| FlexibilitÃ© pour dÃ©clarer une url relative/absolue.
+FR| PossibilitÃ© de donner au lien/script un ID que vous pourriez exploiter en javascript.
+FR| PossibilitÃ© de contrÃ´ler l'ordre des liens/scripts.
 
 **Roadmap**
 
@@ -42,7 +42,7 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 
 == Frequently Asked Questions ==
 
-**Q.** FR| Version française ?
+**Q.** FR| Version franÃ§aise ?
 
 **R.** FR| Plus bas sur cette meme page.
 
@@ -124,69 +124,69 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 
 **Q.** FR| Ne devrions-nous pas garder le nombre de fichiers aussi petit que possible ?
 
-**R.** FR| En regle général, en effet. Mais lorsque votre site et votre expérience grandit, vous pourquoi cerner quand il est temps d'augmenter le nombre de fichiers.
+**R.** FR| En regle gÃ©nÃ©ral, en effet. Mais lorsque votre site et votre expÃ©rience grandit, vous pourquoi cerner quand il est temps d'augmenter le nombre de fichiers.
 
-**Q.** FR| Quelles sont les spécifications systeme que je devrais connaître ?
+**Q.** FR| Quelles sont les spÃ©cifications systeme que je devrais connaÃ®tre ?
 
-**R.** FR| PHP 5.3.0 (et plus), SPL Types (PECL), Theme Wordpress qui déclenche "wp_footer", navigateur supportant HTML5 (pour le backend), ECMASript activé (pas de javascript, pas de chocolat), jQuery (Rappel: Wordpress l'inclut).
+**R.** FR| PHP 5.3.0 (et plus), SPL Types (PECL), Theme Wordpress qui dÃ©clenche "wp_footer", navigateur supportant HTML5 (pour le backend), ECMASript activÃ© (pas de javascript, pas de chocolat), jQuery (Rappel: Wordpress l'inclut).
 
 **Q.** EN| "wp_footer" ?
 
-**R.** EN| La plupart des themes Wordpress le déclenche. http://codex.Wordpress.org/Plugin_API/Action_Reference/wp_footer.
+**R.** EN| La plupart des themes Wordpress le dÃ©clenche. http://codex.Wordpress.org/Plugin_API/Action_Reference/wp_footer.
 
 **Q.** FR| Comment l'utiliser ?
 
-**R.** FR| Lorsque vous éditez une page/post, allez dans la section "this page needs files" et rajouter-y des URL.
+**R.** FR| Lorsque vous Ã©ditez une page/post, allez dans la section "this page needs files" et rajouter-y des URL.
 
 **Q.** FR| Je ne trouve pas la section, ou est-elle ?
 
-**R.** FR| Elle est la. Assurez-vous que vous ne l'avez pas cachée (dans "Screen option").
+**R.** FR| Elle est la. Assurez-vous que vous ne l'avez pas cachÃ©e (dans "Screen option").
 
 **Q.** FR| Je ne trouve pas l'option correspondante dans "Screen option" ?
 
-**R.** FR| Vous pourriez avoir oublié d'activé le plugin apres l'avoir installé.
+**R.** FR| Vous pourriez avoir oubliÃ© d'activÃ© le plugin apres l'avoir installÃ©.
 
-**Q.** FR| Pourquoi ne vois-je qu'une seule entrée pour introduire une url ?
+**Q.** FR| Pourquoi ne vois-je qu'une seule entrÃ©e pour introduire une url ?
 
-**R.** FR| Parce que d'autres entrées apparaitrons tandis que vous introduisez votre url.
+**R.** FR| Parce que d'autres entrÃ©es apparaitrons tandis que vous introduisez votre url.
 
-**Q.** FR| Comment gérer l'ordre dans lequel sont inclus les urls ?
+**Q.** FR| Comment gÃ©rer l'ordre dans lequel sont inclus les urls ?
 
-**R.** FR| Vous pouvez donner une valeur (négative ou positive) aux priorité des url. Les urls seront incluses dans l'ordre croissant de leur priorité. Au plus bas est la priorité, au plus tôt apparaît l'url sur le document.
+**R.** FR| Vous pouvez donner une valeur (nÃ©gative ou positive) aux prioritÃ© des url. Les urls seront incluses dans l'ordre croissant de leur prioritÃ©. Au plus bas est la prioritÃ©, au plus tÃ´t apparaÃ®t l'url sur le document.
 
-**Q.** FR| Quelles sont les limites des valeurs des priorités ?
+**Q.** FR| Quelles sont les limites des valeurs des prioritÃ©s ?
 
 **R.** FR| Les limites sont [-1000, +1000], [TOP - 1000, TOP + 1000], [BOTTOM - 1000, BOTTOM + 1000]
 
 **Q.** FR| Que sont TOP / BOTTOM ?
 
-**R.** FR| Des mots clés (insensibles a la case) que vous pouvez utiliser dans les valeurs des priorité. TOP mettra les styles/script au sommet du head. BOTTOM mettra les styles/script au planché du head.
+**R.** FR| Des mots clÃ©s (insensibles a la case) que vous pouvez utiliser dans les valeurs des prioritÃ©. TOP mettra les styles/script au sommet du head. BOTTOM mettra les styles/script au planchÃ© du head.
 
 **Q.** FR| Puis-je combiner valeur et TOP/BOTTOM ?
 
 **R.** FR| Oui, vous pouvez utiliser une valeur de "TOP - 1000", "TOP + 55", "BOTTOM - 2", etc. tant que vous respectez les limites. "B" et "T" sont des raccourcit (insensibles a la case) pour "BOTTOM" et TOP".
 
-**Q.** FR| Ou seront placées mes urls sans priorité définie ?
+**Q.** FR| Ou seront placÃ©es mes urls sans prioritÃ© dÃ©finie ?
 
-**R.** FR| Quand il n'y a pas de priorité définie, 0 est considéré comme valeur.
+**R.** FR| Quand il n'y a pas de prioritÃ© dÃ©finie, 0 est considÃ©rÃ© comme valeur.
 
 **Q.** FR| L'ordre ne fonctionne pas ?!
 
-**R.** FR| Du a la façon dont les styles/scripts sont agencés par Wordpress, quelques "bricolage" doivent etre fait via jQuery. Ne vous fiez pas a la source d'une page pour vérifier l'ordre. S'il y a un probleme, vérifiez qu'il n'y a pas d'erreur javascript sur votre page.
+**R.** FR| Du a la faÃ§on dont les styles/scripts sont agencÃ©s par Wordpress, quelques "bricolage" doivent etre fait via jQuery. Ne vous fiez pas a la source d'une page pour vÃ©rifier l'ordre. S'il y a un probleme, vÃ©rifiez qu'il n'y a pas d'erreur javascript sur votre page.
 
-**Q.** EN| Pourquoi mon javascript/css n'est pas exactement au sommet/au planché du head?
+**Q.** EN| Pourquoi mon javascript/css n'est pas exactement au sommet/au planchÃ© du head?
 
-**R.** EN| Certains autres plugins/scripts doivent interférer. Ce plugin n'est pas le seul intervenant dans la partie mais il fera de son mieux.
+**R.** EN| Certains autres plugins/scripts doivent interfÃ©rer. Ce plugin n'est pas le seul intervenant dans la partie mais il fera de son mieux.
 
 **Q.** EN| Puis-je mettre du javascript/css ailleurs que dans le head ?
 
-**R.** EN| Non, désolé. Il y a trop de variables pour faire cela correctement.
+**R.** EN| Non, dÃ©solÃ©. Il y a trop de variables pour faire cela correctement.
 
-**Q.** FR| Qui a volé l'orange ?!
+**Q.** FR| Qui a volÃ© l'orange ?!
 
-**R.** FR| Cette vielle blague n'a plus aucun intéret.
+**R.** FR| Cette vielle blague n'a plus aucun intÃ©ret.
 
-**Q.** FR| Est-ce la derniere ligne en français de cette FAQ ?!
+**Q.** FR| Est-ce la derniere ligne en franÃ§ais de cette FAQ ?!
 
 **R.** FR| Oui.
 
