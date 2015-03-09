@@ -2,7 +2,7 @@
 Contributors: Jacquemin Serge 
 Tags: Stylesheet, CSS, Javascript, JS, Specific, External, File, Page, Post
 Requires at least: 4.1
-Tested up to: 4.1
+Tested up to: 4.1.1
 Stable tag: 1
 License: Apache License, Version 2.0
 License URI: http://www.apache.org/licenses/LICENSE-2.0
@@ -18,7 +18,7 @@ Allow to include urls to javascript and css files inside the HTML header on a pa
 
 **Requirements**
 
-PHP 5.3.0 (and above), SPL Types (PECL)
+PHP 5.3.0 (and above)
 
 **Features**
 
@@ -56,7 +56,7 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 
 **Q.** EN| What are the system requirements I should be aware of?
 
-**A.** EN| PHP 5.3.0 (and above), SPL Types (PECL), Wordpress Theme which fires "wp_footer", HTML5-able browser (for backend), ECMASript enabled (no javascript, no sugar), jQuery (Reminder: Wordpress "comes" with it).
+**A.** EN| PHP 5.3.0 (and above), Wordpress Theme which fires "wp_footer", HTML5-able browser (for backend), ECMASript enabled (no javascript, no sugar), jQuery (Reminder: Wordpress "comes" with it).
 
 **Q.** EN| "wp_footer"?
 
@@ -128,11 +128,11 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 
 **Q.** FR| Quelles sont les spécifications systeme que je devrais connaître ?
 
-**R.** FR| PHP 5.3.0 (et plus), SPL Types (PECL), Theme Wordpress qui déclenche "wp_footer", navigateur supportant HTML5 (pour le backend), ECMASript activé (pas de javascript, pas de chocolat), jQuery (Rappel: Wordpress l'inclut).
+**R.** FR| PHP 5.3.0 (et plus), Theme Wordpress qui déclenche "wp_footer", navigateur supportant HTML5 (pour le backend), ECMASript activé (pas de javascript, pas de chocolat), jQuery (Rappel: Wordpress l'inclut).
 
-**Q.** EN| "wp_footer" ?
+**Q.** FR| "wp_footer" ?
 
-**R.** EN| La plupart des themes Wordpress le déclenche. http://codex.Wordpress.org/Plugin_API/Action_Reference/wp_footer.
+**R.** FR| La plupart des themes Wordpress le déclenche. http://codex.Wordpress.org/Plugin_API/Action_Reference/wp_footer.
 
 **Q.** FR| Comment l'utiliser ?
 
@@ -191,6 +191,10 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 **R.** FR| Oui.
 
 == Changelog ==
+
+v1.0.1
+
+- SPL Types (PECL) not required anymore
 
 v1.0.0
 

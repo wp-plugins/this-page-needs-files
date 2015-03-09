@@ -4,11 +4,11 @@ namespace be\mch\tpnf;
 defined('BE_MCH_TPNF')||die();
 
 
-class TPNF_SplEnum  extends \SplEnum {
+class TPNF_SplEnum  {
 	public static function InitList() {
-		$instance = new static;
+		$instance = new \ReflectionClass(get_called_class());
 		
-		static::$List = array_flip($instance->getConstList());
+		static::$List = array_flip($instance->getConstants());
 	}
 	
 	public static function GetName($key)	 {

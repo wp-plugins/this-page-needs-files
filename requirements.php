@@ -1,6 +1,7 @@
 <?php
 defined('BE_MCH_TPNF')||die();
 
+/*
 function tpnf_err_spl_types() {
 	$data = tpnf_plugin_data();
     ?>
@@ -16,6 +17,7 @@ if (!extension_loaded('spl_types')) {
 	
 	return false;
 }
+*/
 
 function tpnf_err_php() {
 	$data = tpnf_plugin_data();
