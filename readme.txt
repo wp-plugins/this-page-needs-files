@@ -195,7 +195,3 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 v1.0.0
 
 - Initial release.
-
-
-http://i.imgur.com/XJeQFxP.jpg
-http://i.imgur.com/IrHYoHo.jpg
