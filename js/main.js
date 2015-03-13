@@ -4,7 +4,7 @@
 	var relativeReg = '^\\w{3,5}:\\/\\/.*';
 	var relativeError = "http://..., https://..., ftp://..., etc.";
 	
-	var fileExtension = /^(?:.*\/)?\w+\.(\w+)[^\/]*$/;
+	var fileExtension = /^(?:.*\/)?(?:\w+\.)+(\w+)[^\/]*$/;
 	
 	var indices = {};
 	var index = 0;

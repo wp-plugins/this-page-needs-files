@@ -2,8 +2,8 @@
 /**
  * Plugin Name: This page needs file
  * Description: Allow to include urls to javascript and css files inside the HTML header on a page/post specifc basis.
- * Version: 1.0.1
- * Date: 09/03/2015
+ * Version: 1.0.2
+ * Date: 13/03/2015
  * Author: Jacquemin Serge
  * Author URI: http://www.mch.be
 **/
@@ -15,7 +15,7 @@ function tpnf_plugin_data() {
 	return get_plugin_data(__FILE__);
 }
 
-if (!include('requirements.php')) {
+if (!include(dirname(__FILE__) . '/requirements.php')) {
 	// requirements not met
 	return;
 }

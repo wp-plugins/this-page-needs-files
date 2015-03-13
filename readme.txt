@@ -1,9 +1,9 @@
 === This page needs files ===
 Contributors: Jacquemin Serge 
 Tags: Stylesheet, CSS, Javascript, JS, Specific, External, File, Page, Post
-Requires at least: 4.1
-Tested up to: 4.1.1
-Stable tag: 1.0.1
+Requires at least: 4.0.1
+Tested up to: 4.2
+Stable tag: 1.0.2
 License: Apache License, Version 2.0
 License URI: http://www.apache.org/licenses/LICENSE-2.0
 
@@ -192,10 +192,14 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 
 == Changelog ==
 
-v1.0.1
+1.0.2
+
+- Slightly better Regular Expression Pattern for auto detection of files' types
+
+1.0.1
 
 - SPL Types (PECL) not required anymore
 
-v1.0.0
+1.0.0
 
 - Initial release.

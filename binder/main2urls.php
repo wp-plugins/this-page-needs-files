@@ -16,7 +16,7 @@ function tpnf_binder_main2urls() {
 		return $returnValue;
 	}
 	
-	$fileExtension = '/^(?:.*\/)?\w+\.(\w+)[^\/]*$/';
+	$fileExtension = '/^(?:.*\/)?(?:\w+\.)+(\w+)[^\/]*$/';
 	
 	$returnValue = new TPNF_Model_Urls();
 	
