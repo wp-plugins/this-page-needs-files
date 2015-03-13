@@ -22,15 +22,17 @@ PHP 5.3.0 (and above)
 
 **Features**
 
-EN| Easy to use.
-EN| Flexibility for declaring relative/absolute url.
-EN| Possibility to give the link/script an ID you could use in javascript.
-EN| Possibility to control the ordering of links/scripts.
+* EN| Easy to use.
+* EN| Flexibility for declaring relative/absolute url.
+* EN| Possibility to give the link/script an ID you could use in javascript.
+* EN| Possibility to control the ordering of links/scripts.
+* EN| Completly free.
 
-FR| Facile d'utilisation.
-FR| Flexibilité pour déclarer une url relative/absolue.
-FR| Possibilité de donner au lien/script un ID que vous pourriez exploiter en javascript.
-FR| Possibilité de contrôler l'ordre des liens/scripts.
+* FR| Facile d'utilisation.
+* FR| Flexibilité pour déclarer une url relative/absolue.
+* FR| Possibilité de donner au lien/script un ID que vous pourriez exploiter en javascript.
+* FR| Possibilité de contrôler l'ordre des liens/scripts.
+* FR| Totalement gratuit.
 
 **Roadmap**
 
