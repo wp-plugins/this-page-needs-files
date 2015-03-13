@@ -6,17 +6,22 @@ defined('BE_MCH_TPNF')||die();
 
 class TPNF_SplEnum  {
 	public static function InitList() {
-		$instance = new \ReflectionClass(get_called_class());
+		$class = get_called_class();
+		$instance = new \ReflectionClass($class);
 		
-		static::$List = array_flip($instance->getConstants());
+		$class::$List = array_flip($instance->getConstants());
 	}
 	
-	public static function GetName($key)	 {
-		return static::$List[$key];
+	public static function GetName($key) {
+		$class = get_called_class();
+		
+		return $class::$List[$key];
 	}
 	
 	public static function GetList() {
-		return static::$List;
+		$class = get_called_class();
+		
+		return $class::$List;
 	}
 }
 

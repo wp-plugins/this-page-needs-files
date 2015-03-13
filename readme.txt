@@ -200,6 +200,12 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 
 == Changelog ==
 
+1.0.3
+
+- (Beta)
+- Reworked late static binding
+
+
 1.0.2
 
 - Slightly better Regular Expression Pattern for auto detection of files' types
