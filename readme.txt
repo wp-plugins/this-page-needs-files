@@ -3,7 +3,7 @@ Contributors: Jacquemin Serge
 Tags: Stylesheet, CSS, Javascript, JS, Specific, External, File, Page, Post
 Requires at least: 4.0.1
 Tested up to: 4.2
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: Apache License, Version 2.0
 License URI: http://www.apache.org/licenses/LICENSE-2.0
 
