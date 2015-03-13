@@ -28,6 +28,7 @@ PHP 5.3.0 (and above)
 * EN| Possibility to control the ordering of links/scripts.
 * EN| Completly free.
 
+
 * FR| Facile d'utilisation.
 * FR| Flexibilité pour déclarer une url relative/absolue.
 * FR| Possibilité de donner au lien/script un ID que vous pourriez exploiter en javascript.
