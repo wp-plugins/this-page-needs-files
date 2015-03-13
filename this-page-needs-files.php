@@ -2,7 +2,7 @@
 /**
  * Plugin Name: This page needs file
  * Description: Allow to include urls to javascript and css files inside the HTML header on a page/post specifc basis.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Date: 13/03/2015
  * Author: Jacquemin Serge
  * Author URI: http://www.mch.be
