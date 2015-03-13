@@ -20,7 +20,7 @@ Allow to include urls to javascript and css files inside the HTML header on a pa
 
 PHP 5.3.0 (and above)
 
-** Target Audience **
+**Target Audience**
 
 This plugin is suited for **developpers** and **webdesigners** who create/handle javascript/css files.
 This plugin won't help you create javascript/css files.
