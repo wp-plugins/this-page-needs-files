@@ -9,19 +9,15 @@ class TPNF_SplEnum  {
 		$class = get_called_class();
 		$instance = new \ReflectionClass($class);
 		
-		$class::$List = array_flip($instance->getConstants());
+		static::$List = array_flip($instance->getConstants());
 	}
 	
 	public static function GetName($key) {
-		$class = get_called_class();
-		
-		return $class::$List[$key];
+		return static::$List[$key];
 	}
 	
 	public static function GetList() {
-		$class = get_called_class();
-		
-		return $class::$List;
+		return static::$List;
 	}
 }
 

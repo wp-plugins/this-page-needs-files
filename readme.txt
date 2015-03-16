@@ -200,11 +200,14 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 
 == Changelog ==
 
+1.0.4
+
+- Back to the initial PHP 5.3+ way of dealing with late static binding
+- Revamped how requirements are checked (backward compatibility improved for that matter)
+
 1.0.3
 
-- (Beta)
-- Reworked late static binding
-
+- Alternate approach for late static binding
 
 1.0.2
 
