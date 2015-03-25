@@ -16,6 +16,9 @@ function tpnf_binder_main2urls() {
 		return $returnValue;
 	}
 	
+	// This section might need an emergency check
+	$emergency = new TPNF_Emergency(__NAMESPACE__ . '\tpnf_binder_main2urls');
+	
 	$fileExtension = '/^(?:.*\/)?(?:\w+\.)+(\w+)[^\/]*$/';
 	
 	$returnValue = new TPNF_Model_Urls();
@@ -75,5 +78,6 @@ function tpnf_binder_main2urls() {
 		$returnValue->Urls[] = $url;
 	}
 	
+	$emergency->validate();
 	return $returnValue;
 }

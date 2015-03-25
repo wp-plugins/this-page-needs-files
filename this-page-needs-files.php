@@ -2,52 +2,186 @@
 /**
  * Plugin Name: This page needs file
  * Description: Allow to include urls to javascript and css files inside the HTML header on a page/post specifc basis.
- * Version: 1.0.4
- * Date: 16/03/2015
+ * Version: 1.0.5
+ * Date: 25/03/2015
  * Author: Jacquemin Serge
- * Author URI: http://www.mch.be
+ * Author URI: https://profiles.wordpress.org/sergejack
 **/
 // important: no namespace for ths file! PHP 5.0+ Compatible!
 define('BE_MCH_TPNF', true);
 define('BE_MCH_TPNF_FILE', __FILE__);
+define('BE_MCH_TPNF_PATH', basename(dirname(BE_MCH_TPNF_FILE)) . '/' . basename(BE_MCH_TPNF_FILE));
+define('BE_MCH_TPNF_ACT_DELAY', 'P7D');
+
+// define('WP_DEBUG', true);
+
+include(dirname(BE_MCH_TPNF_FILE) . '/includes/vars.php');
+
+function tpnf_activate() {
+	if (defined('BE_MCH_ACTUNV')) {
+		new BE_MCH_ACTUNV_messenger('tpnf activate');
+	}
+	
+	BE_MCH_TPNF_VARS::$working = BE_MCH_TPNF_WORKING_KO;
+	BE_MCH_TPNF_VARS::$emergency = BE_MCH_TPNF_EMERGENCY_OK;
+	BE_MCH_TPNF_VARS::$msg = BE_MCH_TPNF_MSG_READY;
+	BE_MCH_TPNF_VARS::$activation = new DateTime();
+	
+	BE_MCH_TPNF_VARS::store();
+}
+register_activation_hook(BE_MCH_TPNF_FILE, 'tpnf_activate');
+
+function tpnf_uninstall()
+{
+	if (defined('BE_MCH_ACTUNV')) {
+		new BE_MCH_ACTUNV_messenger('tpnf uninstall');
+	}
+	
+		
+	BE_MCH_TPNF_VARS::$msg = BE_MCH_TPNF_MSG_UNDEFINED;
+	BE_MCH_TPNF_VARS::$working = BE_MCH_TPNF_WORKING_UNDEFINED;
+	BE_MCH_TPNF_VARS::$emergency = BE_MCH_TPNF_EMERGENCY_UNDEFINED;
+	BE_MCH_TPNF_VARS::$activation = BE_MCH_TPNF_ACTIVATION_UNDEFINED;
+	
+	BE_MCH_TPNF_VARS::store();
+}
+register_deactivation_hook(BE_MCH_TPNF_FILE, 'tpnf_uninstall');
+
+switch(BE_MCH_TPNF_VARS::$msg) {
+	case BE_MCH_TPNF_MSG_UNDEFINED :
+		BE_MCH_TPNF_VARS::$msg = BE_MCH_TPNF_MSG_READY;
+		BE_MCH_TPNF_VARS::$activation = new DateTime();
+		
+		// Go on....
+	case BE_MCH_TPNF_MSG_READY :
+		$dateMin = new DateTime();
+		$dateMin->sub(new DateInterval(BE_MCH_TPNF_ACT_DELAY));
+	
+		if (BE_MCH_TPNF_VARS::$activation >= $dateMin) {
+			break;
+		} else {
+			BE_MCH_TPNF_VARS::$msg = BE_MCH_TPNF_MSG_SET;
+			// Go on....
+		}
+	case BE_MCH_TPNF_MSG_SET :
+		function tpnf_uninstalled() {
+			$data = tpnf_plugin_data();
+			$delay = BE_MCH_TPNF_VARS::$activation->diff(new DateTime());
+			?>
+			<div class="updated tpnf-msg">
+				<h1><?php echo($data['Name']); ?></h1>
+				<p>
+					Hey, is this plugin meeting your needs?
+				</p>
+				<p>
+					Please tell us about it on the official Wordpress website.
+                    <br/>
+                    <a href="https://wordpress.org/support/view/plugin-reviews/this-page-needs-files#postform" data-dismiss="<?php echo(add_query_arg('tpnf-action-dismiss', 'true')); ?>"  target="_blank">Give us feedback</a>.
+                    <br/>
+				</p>
+                <p>
+                    Not in the mood to give us a bit of feedback?
+                    <br/>
+                    <a href="<?php echo(add_query_arg('tpnf-action-dismiss', 'true')); ?>">Dismiss this message</a>
+                </p>
+                <p>
+   					Thank for having used <strong><?php echo($data['Name']); ?></strong> for <?php echo($delay->format('%a')); ?> days. We'll keep working to improve it.
+                </p>
+			</div>
+			<?php
+		}
+		
+		if ($_GET[sanitize_key( 'tpnf-action-dismiss' )] == 'true') {
+			BE_MCH_TPNF_VARS::$msg = BE_MCH_TPNF_MSG_DISMISS;
+			BE_MCH_TPNF_VARS::store_variable(BE_MCH_TPNF_MSG);
+		} else {
+			add_action('admin_notices', 'tpnf_uninstalled');
+		}
+		
+		break;
+}
+
+if ($_GET[sanitize_key( 'tpnf-action-reactivate' )] == 'true') {
+	BE_MCH_TPNF_VARS::$working = BE_MCH_TPNF_WORKING_KO;
+	BE_MCH_TPNF_VARS::$emergency = BE_MCH_TPNF_EMERGENCY_OK;
+}
+
+if (defined('BE_MCH_ACTUNV')) {
+	new BE_MCH_ACTUNV_messenger('working? ' . BE_MCH_TPNF_VARS::$working);
+}
 
 function tpnf_plugin_data() {
 	return get_plugin_data(BE_MCH_TPNF_FILE);
 }
 
-include(dirname(BE_MCH_TPNF_FILE) . '/includes/requirements.php');
-register_activation_hook(BE_MCH_TPNF_FILE, 'tpnf_check_requirements');
+require_once(dirname(BE_MCH_TPNF_FILE) . '/includes/error.php');
+require_once(dirname(BE_MCH_TPNF_FILE) . '/includes/requirements.php');
 
-include(dirname(BE_MCH_TPNF_FILE) . '/includes/uninstall.php');
-register_deactivation_hook(BE_MCH_TPNF_FILE, 'tpnf_uninstall');
+// BE_MCH_TPNF_VARS::$working = BE_MCH_TPNF_WORKING_OK;
 
-$be_mch_tpnf_working = (int)get_option('be_mch_tpnf_working', -1);
-if ($be_mch_tpnf_working === -1) {
-	require_once( ABSPATH . 'wp-admin/includes/plugin.php' ); 
-	// Either the plugin is inactive either its "working value" should be set
-	if (!is_plugin_active(basename(dirname(BE_MCH_TPNF_FILE)) . '/' . basename(BE_MCH_TPNF_FILE))) {
-		return;	
+function tpnf_run() {
+	if (BE_MCH_TPNF_VARS::$working !== BE_MCH_TPNF_WORKING_FATAL) {
+		require_once(dirname(BE_MCH_TPNF_FILE) . '/includes/emergency.php');
 	}
 	
-	$be_mch_tpnf_working = 0;
-}
-
-if ($be_mch_tpnf_working === 0) {
-	// maybe plugin could start "working" due to its activation or a change of environement
-	$be_mch_tpnf_working = tpnf_check_requirements() ? 1 : 0;
-}
-
-if ($be_mch_tpnf_working === 1) {
-	try {
-		include(dirname(BE_MCH_TPNF_FILE) . '/includes/program.php');
+	
+	if (defined('BE_MCH_ACTUNV')) {
+		new BE_MCH_ACTUNV_messenger('BE_MCH_TPNF_VARS::$working = ' . BE_MCH_TPNF_VARS::$working);
+		new BE_MCH_ACTUNV_messenger(BE_MCH_TPNF_VARS::$working === BE_MCH_TPNF_WORKING_OK ? 'BE_MCH_TPNF_VARS::$working === BE_MCH_TPNF_WORKING_OK' : 'BE_MCH_TPNF_VARS::$working <> BE_MCH_TPNF_WORKING_OK');
 	}
-	catch (Exception $e) {
-		require_once(dirname(BE_MCH_TPNF_FILE) . '/includes/error.php');
+	
+	
+	if (BE_MCH_TPNF_VARS::$working === BE_MCH_TPNF_WORKING_FATAL) {
+		$err = new BE_MCH_TPNF_Error(sprintf(
+			'An potent fatal error has previously been encoutered.%1$s
+			This plugin has put itself on a halted state and currently prevents itself from running.%1$s
+			Please click on "reactivate" when/if you think the issue has been fixed.%1$s
+			%1$s
+			<a href="%2$s">Reactivate</a>%1$s
+			%1$s
+			<a href="https://wordpress.org/support/plugin/this-page-needs-files#latest" target="_blank">Contact support</a>
+			'
+			, '<br/>'
+			, add_query_arg('tpnf-action-reactivate', 'true')
+		));
+		add_action('admin_notices', array($err, 'display'));
 		
-		$msg = new BE_MCH_TPNF_Error($e->getMessage());
-		add_action('admin_notices', array($msg, 'display'));
-		
-		// maybe plugin isn't "working" anymore due to a change of environement
+		return;
+	}
+	
+	if (BE_MCH_TPNF_VARS::$working === BE_MCH_TPNF_WORKING_ERROR) {
+		$err = new BE_MCH_TPNF_Error(sprintf(
+			'An unexpected error has previously been encoutered.%1$s
+			%1$s
+			<a href="https://wordpress.org/support/plugin/this-page-needs-files#latest" target="_blank">Contact support</a>
+			'
+			, '<br/>'
+		));
+		add_action('admin_notices', array($err, 'display'));
+	}
+	
+	if (BE_MCH_TPNF_VARS::$working !== BE_MCH_TPNF_WORKING_OK) {
+		// maybe plugin could start "working" due to a change of environement
 		tpnf_check_requirements();
 	}
+	
+	if (BE_MCH_TPNF_VARS::$working === BE_MCH_TPNF_WORKING_OK) {
+		try {
+			include(dirname(BE_MCH_TPNF_FILE) . '/includes/program.php');
+		}
+		catch (Exception $e) {
+			$err = new BE_MCH_TPNF_Error($e->getMessage());
+			add_action('admin_notices', array($err, 'display'));
+		}
+	}
 }
+add_action('plugins_loaded', 'tpnf_run');
+
+function tpnf_add_action_links($links) {
+	array_push(
+		$links
+		, '<a href="https://wordpress.org/support/plugin/this-page-needs-files#latest" target="_blank">Get Support</a>'
+	);
+	return $links;
+}
+add_filter( 'plugin_action_links_' . plugin_basename(BE_MCH_TPNF_FILE), 'tpnf_add_action_links'); 

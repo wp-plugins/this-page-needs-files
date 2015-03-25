@@ -9,10 +9,14 @@
 	var indices = {};
 	var index = 0;
 	
-	 var indices = {};
+	var indices = {};
 
 	$(document).ready(function() {
-		var tpnfIndices = document.getElementsByName('tpnf-indices')[0];
+		var tpnfIndices = document.getElementsByName('tpnf-indices');
+		
+		if (tpnfIndices.length == 0) {
+			return;
+		}
 		
 		var fSetIndices = function() {
 			var ar = [];
@@ -21,7 +25,7 @@
 				ar.push(i);
 			}
 			
-			tpnfIndices.value = ar.join(',');
+			tpnfIndices[0].value = ar.join(',');
 		}
 		
 		// Add set/release listeners on rows
@@ -164,5 +168,24 @@
 			})
 			.trigger('tpnf-init')
 		;
+	});
+	
+	$(document).ready(function() {
+		$('.tpnf-msg').find('[data-dismiss]').each(function() {
+			var jElt = $(this);
+			
+			jElt.click(function() {
+				setTimeout(
+					function() {
+						alert('"This page needs files"\r\n\
+Thank you for your feedback.\r\n\
+\r\n\
+The message will now be dismissed.');
+						window.location.href = jElt.attr('data-dismiss');
+					}
+					, 1
+				);
+			});
+		});
 	});
 })(jQuery);

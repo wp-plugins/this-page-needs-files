@@ -1,0 +1,105 @@
+
+
+New entry:
+C:\inetpub\wwwroot\wip.mchdns.be\wp-content\plugins\this-page-needs-files\includes\emergency.php: 59
+variable: BE_MCH_TPNF_EMERGENCY
+working: OK
+emergency: KO
+
+
+New entry:
+C:\inetpub\wwwroot\wip.mchdns.be\wp-content\plugins\this-page-needs-files\includes\emergency.php: 79
+variable: BE_MCH_TPNF_EMERGENCY
+working: OK
+emergency: OK
+
+
+New entry:
+C:\inetpub\wwwroot\wip.mchdns.be\wp-content\plugins\this-page-needs-files\includes\vars.php: 136
+variable: NULL
+working: OK
+emergency: OK
+
+
+New entry:
+C:\inetpub\wwwroot\wip.mchdns.be\wp-content\plugins\this-page-needs-files\includes\emergency.php: 59
+variable: BE_MCH_TPNF_EMERGENCY
+working: OK
+emergency: KO
+
+
+New entry:
+C:\inetpub\wwwroot\wip.mchdns.be\wp-content\plugins\this-page-needs-files\includes\emergency.php: 79
+variable: BE_MCH_TPNF_EMERGENCY
+working: OK
+emergency: OK
+
+
+New entry:
+C:\inetpub\wwwroot\wip.mchdns.be\wp-content\plugins\this-page-needs-files\includes\vars.php: 138
+variable: NULL
+working: OK
+emergency: OK
+
+
+New entry:
+C:\inetpub\wwwroot\wip.mchdns.be\wp-content\plugins\this-page-needs-files\includes\emergency.php: 59
+variable: BE_MCH_TPNF_EMERGENCY
+working: OK
+emergency: KO
+
+
+New entry:
+C:\inetpub\wwwroot\wip.mchdns.be\wp-content\plugins\this-page-needs-files\includes\emergency.php: 79
+variable: BE_MCH_TPNF_EMERGENCY
+working: OK
+emergency: OK
+
+
+New entry:
+C:\inetpub\wwwroot\wip.mchdns.be\wp-content\plugins\this-page-needs-files\includes\vars.php: 140
+variable: NULL
+working: OK
+emergency: OK
+
+
+New entry:
+C:\inetpub\wwwroot\wip.mchdns.be\wp-content\plugins\this-page-needs-files\includes\emergency.php: 59
+variable: BE_MCH_TPNF_EMERGENCY
+working: OK
+emergency: KO
+
+
+New entry:
+C:\inetpub\wwwroot\wip.mchdns.be\wp-content\plugins\this-page-needs-files\includes\emergency.php: 79
+variable: BE_MCH_TPNF_EMERGENCY
+working: OK
+emergency: OK
+
+
+New entry:
+C:\inetpub\wwwroot\wip.mchdns.be\wp-content\plugins\this-page-needs-files\includes\vars.php: 140
+variable: NULL
+working: OK
+emergency: OK
+
+
+New entry:
+C:\inetpub\wwwroot\wip.mchdns.be\wp-content\plugins\this-page-needs-files\includes\emergency.php: 59
+variable: BE_MCH_TPNF_EMERGENCY
+working: OK
+emergency: KO
+
+
+New entry:
+C:\inetpub\wwwroot\wip.mchdns.be\wp-content\plugins\this-page-needs-files\includes\emergency.php: 79
+variable: BE_MCH_TPNF_EMERGENCY
+working: OK
+emergency: OK
+
+
+New entry:
+C:\inetpub\wwwroot\wip.mchdns.be\wp-content\plugins\this-page-needs-files\includes\vars.php: 144
+variable: NULL
+working: OK
+emergency: OK

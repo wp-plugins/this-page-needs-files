@@ -1,9 +1,11 @@
 === This page needs files ===
 Contributors: Jacquemin Serge 
+Author: Jacquemin Serge 
+Author URI: https://profiles.wordpress.org/sergejack
 Tags: Stylesheet, CSS, Javascript, JS, Specific, External, File, Page, Post
 Requires at least: 4.0.1
 Tested up to: 4.2
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: Apache License, Version 2.0
 License URI: http://www.apache.org/licenses/LICENSE-2.0
 
@@ -46,7 +48,13 @@ Unless a bug gets reported or I think it's lacking a feature, I don't plan to ch
 
 == Installation ==
 
-Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.
+1. Search the plugin through the 'Plugins - Add new' menu in WordPress and click on 'Install now'
+**or**
+Donwload then upload the zip file through the 'Plugins - Add new' menu then 'Upload Plugin' in Wordpress and click on 'Install now'
+**or** 
+Donwload then extract the zip file and drop its contents in the wp-content/plugins/ directory of your WordPress installation
+**or**
+2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
 
@@ -199,6 +207,11 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 **R.** FR| Oui.
 
 == Changelog ==
+
+1.0.5
+
+- Feedback and support quick links
+- Various improvements
 
 1.0.4
 
