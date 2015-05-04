@@ -5,7 +5,7 @@ Author URI: https://profiles.wordpress.org/sergejack
 Tags: Stylesheet, CSS, Javascript, JS, Specific, External, File, Page, Post
 Requires at least: 4.0.1
 Tested up to: 4.2
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: Apache License, Version 2.0
 License URI: http://www.apache.org/licenses/LICENSE-2.0
 
@@ -204,6 +204,11 @@ Unless a bug gets reported or I think it's lacking a feature, I don't plan to ch
 **R.** FR| Oui.
 
 == Changelog ==
+
+1.0.6
+
+- Prevent emergency halt to occur after "user abort"
+- Might call php method "ignore_user_abort(true)"
 
 1.0.5
 

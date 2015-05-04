@@ -2,8 +2,8 @@
 /**
  * Plugin Name: This page needs file
  * Description: Allow to include urls to javascript and css files inside the HTML header on a page/post specifc basis.
- * Version: 1.0.5
- * Date: 25/03/2015
+ * Version: 1.0.6
+ * Date: 04/05/2015
  * Author: Jacquemin Serge
  * Author URI: https://profiles.wordpress.org/sergejack
 **/

@@ -43,6 +43,8 @@ class TPNF_Emergency {
 	}
 	
 	function __construct($method) {
+		ignore_user_abort(true);
+		
 		self::hook_validate_all();
 		
 		$this->method = $method;
