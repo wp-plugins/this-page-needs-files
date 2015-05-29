@@ -39,7 +39,7 @@ function tpnf_main() {
 	
 	include __DIR__ . '/../templates/main.php';
 	
-	$emergency->validate();
+	// $emergency->validate();
 }
 function tpnf_add_meta_boxes() {
 	add_meta_box( 

@@ -78,6 +78,6 @@ function tpnf_binder_main2urls() {
 		$returnValue->Urls[] = $url;
 	}
 	
-	$emergency->validate();
+	// $emergency->validate();
 	return $returnValue;
 }

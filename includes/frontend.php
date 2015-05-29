@@ -96,6 +96,6 @@ function tpnf_load_client_scripts($post) {
 		$hooked = true;
 	}
 	
-	$emergency->validate();
+	// $emergency->validate();
 }
 add_action( 'the_post', __NAMESPACE__ . '\tpnf_load_client_scripts' );
