@@ -2,8 +2,8 @@
 /**
  * Plugin Name: This page needs file
  * Description: Allow to include urls to javascript and css files inside the HTML header on a page/post specifc basis.
- * Version: 1.0.6
- * Date: 04/05/2015
+ * Version: 1.0.7
+ * Date: 29/05/2015
  * Author: Jacquemin Serge
  * Author URI: https://profiles.wordpress.org/sergejack
 **/
@@ -18,10 +18,6 @@ define('BE_MCH_TPNF_ACT_DELAY', 'P7D');
 include(dirname(BE_MCH_TPNF_FILE) . '/includes/vars.php');
 
 function tpnf_activate() {
-	if (defined('BE_MCH_ACTUNV')) {
-		new BE_MCH_ACTUNV_messenger('tpnf activate');
-	}
-	
 	BE_MCH_TPNF_VARS::$working = BE_MCH_TPNF_WORKING_KO;
 	BE_MCH_TPNF_VARS::$emergency = BE_MCH_TPNF_EMERGENCY_OK;
 	BE_MCH_TPNF_VARS::$msg = BE_MCH_TPNF_MSG_READY;
@@ -33,11 +29,6 @@ register_activation_hook(BE_MCH_TPNF_FILE, 'tpnf_activate');
 
 function tpnf_uninstall()
 {
-	if (defined('BE_MCH_ACTUNV')) {
-		new BE_MCH_ACTUNV_messenger('tpnf uninstall');
-	}
-	
-		
 	BE_MCH_TPNF_VARS::$msg = BE_MCH_TPNF_MSG_UNDEFINED;
 	BE_MCH_TPNF_VARS::$working = BE_MCH_TPNF_WORKING_UNDEFINED;
 	BE_MCH_TPNF_VARS::$emergency = BE_MCH_TPNF_EMERGENCY_UNDEFINED;
@@ -106,10 +97,6 @@ if ($_GET[sanitize_key( 'tpnf-action-reactivate' )] == 'true') {
 	BE_MCH_TPNF_VARS::$emergency = BE_MCH_TPNF_EMERGENCY_OK;
 }
 
-if (defined('BE_MCH_ACTUNV')) {
-	new BE_MCH_ACTUNV_messenger('working? ' . BE_MCH_TPNF_VARS::$working);
-}
-
 function tpnf_plugin_data() {
 	return get_plugin_data(BE_MCH_TPNF_FILE);
 }
@@ -120,17 +107,6 @@ require_once(dirname(BE_MCH_TPNF_FILE) . '/includes/requirements.php');
 // BE_MCH_TPNF_VARS::$working = BE_MCH_TPNF_WORKING_OK;
 
 function tpnf_run() {
-	if (BE_MCH_TPNF_VARS::$working !== BE_MCH_TPNF_WORKING_FATAL) {
-		require_once(dirname(BE_MCH_TPNF_FILE) . '/includes/emergency.php');
-	}
-	
-	
-	if (defined('BE_MCH_ACTUNV')) {
-		new BE_MCH_ACTUNV_messenger('BE_MCH_TPNF_VARS::$working = ' . BE_MCH_TPNF_VARS::$working);
-		new BE_MCH_ACTUNV_messenger(BE_MCH_TPNF_VARS::$working === BE_MCH_TPNF_WORKING_OK ? 'BE_MCH_TPNF_VARS::$working === BE_MCH_TPNF_WORKING_OK' : 'BE_MCH_TPNF_VARS::$working <> BE_MCH_TPNF_WORKING_OK');
-	}
-	
-	
 	if (BE_MCH_TPNF_VARS::$working === BE_MCH_TPNF_WORKING_FATAL) {
 		$err = new BE_MCH_TPNF_Error(sprintf(
 			'An potent fatal error has previously been encoutered.%1$s

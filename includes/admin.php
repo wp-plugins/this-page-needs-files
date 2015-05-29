@@ -15,7 +15,7 @@ function tpnf_main() {
 	global $post, $wp_current_filter;
 	
 	// This section might need an emergency check
-	$emergency = new TPNF_Emergency(__NAMESPACE__ . '\tpnf_main');
+	// $emergency = new TPNF_Emergency(__NAMESPACE__ . '\tpnf_main');
 	
 	//throw new \Exception(print_r($wp_current_filter, true) . ':D');
 	

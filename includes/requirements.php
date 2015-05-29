@@ -13,21 +13,11 @@ function tpnf_check_requirements()
 	}
 	$alreadyChecked = true;
 	
-	if (defined('BE_MCH_ACTUNV')) {
-		new BE_MCH_ACTUNV_messenger('tpnf_check_requirements !!!');
-	}
-	
 	// Fatal error until proven otherwise
 	BE_MCH_TPNF_VARS::$working = BE_MCH_TPNF_WORKING_FATAL;
-	if (defined('BE_MCH_ACTUNV')) {
-		new BE_MCH_ACTUNV_messenger('BE_MCH_TPNF_WORKING_FATAL !!!');
-	}
 	try {
 		// Expected behaviour: requirement met or not
 		BE_MCH_TPNF_VARS::$working = tpnf_check_requirements_work() ? BE_MCH_TPNF_WORKING_OK : BE_MCH_TPNF_WORKING_KO;
-		if (defined('BE_MCH_ACTUNV')) {
-			new BE_MCH_ACTUNV_messenger('BE_MCH_TPNF_WORKING_OK !!!');
-		}		
 	} catch (Exception $e) {
 		// Unexpected error
 		BE_MCH_TPNF_VARS::$working = BE_MCH_TPNF_WORKING_ERROR;

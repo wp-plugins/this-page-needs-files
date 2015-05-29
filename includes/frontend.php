@@ -50,7 +50,7 @@ function tpnf_load_client_scripts($post) {
 	}
 	
 	// This section might need an emergency check
-	$emergency = new TPNF_Emergency(__NAMESPACE__ . '\tpnf_main');
+	// $emergency = new TPNF_Emergency(__NAMESPACE__ . '\tpnf_main');
 	
 	$std = json_decode($meta);
 

@@ -63,14 +63,9 @@ class BE_MCH_TPNF_VARS {
 					break;
 				}
 			case BE_MCH_TPNF_WORKING:
-				if (defined('BE_MCH_ACTUNV')) {
-					new BE_MCH_ACTUNV_messenger('tpnf should store case working');
-				}			
 				if (self::$working !== self::$exWorking) {
 					self::$exWorking = self::$working;
-					if (defined('BE_MCH_ACTUNV')) {
-						new BE_MCH_ACTUNV_messenger('tpnf should store working');
-					}
+
 					if (self::$working !== BE_MCH_TPNF_WORKING_UNDEFINED) {
 						update_option(BE_MCH_TPNF_WORKING, self::$working);
 					} else {
@@ -81,14 +76,9 @@ class BE_MCH_TPNF_VARS {
 					break;
 				}
 			case BE_MCH_TPNF_EMERGENCY:
-				if (defined('BE_MCH_ACTUNV')) {
-					new BE_MCH_ACTUNV_messenger('tpnf should store case emergency');
-				}
 				if (self::$emergency !== self::$exEmergency) {
 					self::$exEmergency = self::$emergency;
-					if (defined('BE_MCH_ACTUNV')) {
-						new BE_MCH_ACTUNV_messenger('tpnf should store emergency');
-					}					
+				
 					if (self::$emergency !== BE_MCH_TPNF_EMERGENCY_UNDEFINED) {
 						update_option(BE_MCH_TPNF_EMERGENCY, self::$emergency);
 					} else {
@@ -99,14 +89,9 @@ class BE_MCH_TPNF_VARS {
 					break;
 				}
 			case BE_MCH_TPNF_MSG:
-				if (defined('BE_MCH_ACTUNV')) {
-					new BE_MCH_ACTUNV_messenger('tpnf should store case msg');
-				}
 				if (self::$msg !== self::$exMsg) {
 					self::$exMsg = self::$msg;
-					if (defined('BE_MCH_ACTUNV')) {
-						new BE_MCH_ACTUNV_messenger('tpnf should store msg');
-					}					
+				
 					if (self::$msg !== BE_MCH_TPNF_MSG_UNDEFINED) {
 						update_option(BE_MCH_TPNF_MSG, self::$msg);
 					} else {
@@ -117,14 +102,9 @@ class BE_MCH_TPNF_VARS {
 					break;
 				}
 			case BE_MCH_TPNF_ACTIVATION:
-				if (defined('BE_MCH_ACTUNV')) {
-					new BE_MCH_ACTUNV_messenger('tpnf should store case activation');
-				}
 				if (self::$activation !== self::$exActivation) {
 					self::$exActivation = self::$activation;
-					if (defined('BE_MCH_ACTUNV')) {
-						new BE_MCH_ACTUNV_messenger('tpnf should store activation');
-					}					
+			
 					if (self::$activation !== BE_MCH_TPNF_ACTIVATION_UNDEFINED) {
 						update_option(BE_MCH_TPNF_ACTIVATION, self::$activation->format(DateTime::W3C));
 					} else {
@@ -135,41 +115,9 @@ class BE_MCH_TPNF_VARS {
 					break;
 				}				
 		}
-		
-		/*
-		$file = dirname(BE_MCH_TPNF_FILE) . '/errors/cals.txt';
-		
-		$current = "\r\n\r\nNew entry:\r\n";
-		$current .= $caller['file'] . ': ' . $caller['line'] . "\r\n";
-		$current .= 'variable: ' . ($variable == null ? 'NULL' : $variable) . "\r\n";
-		$current .= 'working: ' . self::$working . "\r\n";
-		$current .= 'emergency: ' . self::$emergency . "\r\n";
-		
-		$fp = fopen($file, 'a');
-
-		for($i = 0; !flock($fp, LOCK_EX) && $i < 10; ++$i) {
-			usleep(100000);
-		}
-		
-		if ($i < 10) {
-			fwrite($fp, $current);
-			fflush($fp);            // libere le contenu avant d'enlever le verrou
-			flock($fp, LOCK_UN);    // Enleve le verrou
-		}
-
-		fclose($fp);
-		
-		if ($variable == null) {
-			sleep(10);
-		}
-		*/
 	}
 	
 	static public function store() {
-		if (defined('BE_MCH_ACTUNV')) {
-			new BE_MCH_ACTUNV_messenger('tpnf should store');
-		}
-		
 		self::store_variable(null);
 	}
 	
